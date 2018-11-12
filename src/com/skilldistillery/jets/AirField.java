@@ -21,11 +21,12 @@ public class AirField {
 	}
 
 	public void addAJet(Jet jet) {
+		
 
 		for (int i = 0; i < this.jets.length; i++) {
 			if (this.jets[i] == null) {
 				jets[i] = jet;
-				System.out.println("A new Jet has been added: " + jets[i].getModel());
+				System.out.println("A new Jet has been added, You added a:  " + jets[i].getModel());
 				break;
 			}
 		}
@@ -65,7 +66,7 @@ public class AirField {
 				if (speed > max) {
 
 					max = speed;
-					name = this.jets[i].getModel();
+					name = ("" + " Model: " + this.jets[i].getModel() + " Speed: " + this.jets[i].getSpeed() + " Range: " + this.jets[i].getRange() + " Price: " +this.jets[i].getPrice());
 					
 
 				}
@@ -85,7 +86,7 @@ public class AirField {
 				if (speed > max) {
 
 					max = speed;
-					name = this.jets[i].getModel();
+					name = ("" + " Model: " + this.jets[i].getModel() + " Speed: " + this.jets[i].getSpeed() + " Range: " + this.jets[i].getRange() + " Price: " +this.jets[i].getPrice());
 					
 
 				}

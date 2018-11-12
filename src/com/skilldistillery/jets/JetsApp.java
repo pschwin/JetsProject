@@ -4,16 +4,23 @@ import java.util.Scanner;
 
 public class JetsApp {
 
+	static AirField airField = new AirField();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AirField hanger = new AirField();
+		//AirField hanger = new AirField();
+		
+		do {
 		displaymenu();
+		}while(true);
+		
 	}
 
+	
+	
 	public static void displaymenu() {
-		AirField airField = new AirField();
 		CargoPlane cargo = new CargoPlane(null, 0, 0, 0);
 		FighterJet fighter = new FighterJet(null, 0, 0, 0);
+		
 		
 		System.out.println("Make a selection from the menu below: ");
 		System.out.println(
@@ -39,24 +46,25 @@ public class JetsApp {
 			fighter.fight();
 		}
 		else if (selection == 7) {
-			Scanner addJet = new Scanner(System.in);
+
 			System.out.println("It's time to add a new Jet to the Fleet!");
 			System.out.println("Enter the model of the Jet: ");
-			addJet.nextLine();
+			String model = input.next();
 			System.out.println("Enter the speed of the Jet: ");
-			addJet.nextDouble();
+			double speed = input.nextDouble();
 			System.out.println("Enter the range of the Jet: ");
-			addJet.nextInt();
+			int range = input.nextInt();
 			System.out.println("Enter the price of the Jet: ");
-			addJet.nextLong();
-			Bomber newBomber = new Bomber("NewJet", 23.00, 3000, 4000000);
-			airField.addAJet(newBomber);
+			long price = input.nextLong();
+			JetsImpl addAJet = new JetsImpl(model, speed, range, price);
+			airField.addAJet(addAJet);
 		}
 		else if (selection == 8) {
 			System.out.println("Goodbye");
+			
 			System.exit(0);
 		}
-		// add switches
+		
 	}
 
 }
